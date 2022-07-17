@@ -1,0 +1,27 @@
+!
+! Zebra configuration saved from vty
+!   2022/07/16 02:35:21
+!
+hostname r3
+password zpassword
+enable password epassword
+log file /home/mininet/git_workspace/00_qua_comm/r3/bgpd.log
+!
+router bgp 30
+ bgp router-id 10.10.13.2
+ network 10.0.10.0/24
+ network 10.1.0.0/24
+ network 10.10.13.0/24
+ network 10.10.23.0/24
+ neighbor 10.10.13.1 remote-as 100
+ neighbor 10.10.23.1 remote-as 100
+!
+ address-family ipv6
+ exit-address-family
+ exit
+!
+access-list filter1 permit 10.0.10.0/24
+access-list filter2 permit 10.1.0.0/24
+!
+line vty
+!

@@ -1,0 +1,18 @@
+! bgpd configuration file for router r2
+
+hostname r2
+password zpassword
+enable password epassword
+
+log file /home/mininet/git_workspace/00_qua_comm/r2/bgpd.log
+
+router bgp 100
+bgp router-id 10.10.12.2
+
+! These are the networks we announce; configured here to be ALL directly connected networks
+network 10.10.12.0/24
+network 10.10.23.0/24
+
+!These are the neighbors with which we estabish BGP sessions:
+neighbor 10.10.12.1 remote-as 100
+neighbor 10.10.23.2 remote-as 30
