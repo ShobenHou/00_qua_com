@@ -8,3 +8,4 @@ in init_mininet.py:
 DIRPREFIX='/home/mininet/git_workspace/00_qua_comm' 
 
 in zebra.conf and bgpd.conf:
+log file /home/mininet/git_workspace/00_qua_comm/r1/bgpd.log
